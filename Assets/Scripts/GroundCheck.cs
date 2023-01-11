@@ -21,6 +21,5 @@ public class GroundCheck : MonoBehaviour
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * 100, Color.white);
             OnGround = false;
         }
-        Debug.Log(OnGround ? "yea" : "nah");
     }
 }
