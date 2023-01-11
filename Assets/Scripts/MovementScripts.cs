@@ -17,11 +17,11 @@ public class MovementScripts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        jump = Input.GetAxisRaw("Jump") > 0 && rigidbodies.FindAll(x => x.velocity.y != 0).Count == 0 ? true : false;
+        jump = Input.GetAxisRaw("Jump") > 0 && rigidbodies.FindAll(x => !x.GetComponent<GroundCheck>().OnGround).Count == 0 ? true : false;
         
         foreach (Rigidbody rb in rigidbodies)
         {
-            Vector3 velocity = new Vector3(Input.GetAxisRaw("Horizontal") > 0 ? speed : Input.GetAxisRaw("Horizontal") < 0 ? -speed : 0, (jump ? jumpHeight : 0) + rb.velocity.y, 0);
+            Vector3 velocity = new Vector3(Input.GetAxisRaw("Horizontal") > 0 ? speed : Input.GetAxisRaw("Horizontal") < 0 ? -speed : 0, jump ? jumpHeight : rb.velocity.y, 0);
             rb.velocity = velocity;
         }
     }
