@@ -17,7 +17,7 @@ public class Respawn : MonoBehaviour
         if (other.CompareTag("Deathzone"))
         {
             Debug.Log(respawnPos.x.ToString() + " " + respawnPos.y.ToString());
-            transform.position = respawnPos;
+            transform.position = respawnPos + new Vector3(0, 10, 0);
         }
         else if (other.CompareTag("Checkpoint"))
         {

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Deathzone
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
