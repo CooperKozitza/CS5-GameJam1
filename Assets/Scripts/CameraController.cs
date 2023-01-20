@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
     private void Update()
     {
         Vector3 pos = Vector3.Lerp(movementScript.rigidbodies[0].transform.position, movementScript.rigidbodies[1].transform.position, 0.5f);
-        transform.position = new Vector3(pos.x, startPos.y, startPos.z);
+        transform.position = new Vector3(pos.x, pos.y, startPos.z);
         transform.Translate(new Vector3(0, 0, startPos.z - (Vector3.Distance(movementScript.rigidbodies[0].transform.position, movementScript.rigidbodies[1].transform.position) - starDistance) * zoom + zoomOffset), Space.Self);
     }
 }
