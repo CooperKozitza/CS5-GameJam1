@@ -20,9 +20,14 @@ public class Player : MonoBehaviour
             gameData.coins++;
             other.gameObject.SetActive(false);
         }
-        else if (other.CompareTag("Collectable"))
+        else if (other.CompareTag("Tren"))
         {
             gameData.size += 0.1f;
+            other.gameObject.SetActive(false);
+        }
+        else if (other.CompareTag("Veggies"))
+        {
+            gameData.size -= 0.1f;
             other.gameObject.SetActive(false);
         }
     }
